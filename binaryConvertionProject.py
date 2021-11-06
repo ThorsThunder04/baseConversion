@@ -25,9 +25,10 @@ def decToBinLst(num):
         binary += [tempQuotient % 2]
         tempQuotient = tempQuotient // 2
 
-    return binary[::-1]
+    binary.reverse()
+    return binary
 
-#print(decToBinLst(123)) # -> [1, 1, 1, 1, 0, 1, 1]
+# print(decToBinLst(123)) # -> [1, 1, 1, 1, 0, 1, 1]
 
 
 # exercice 8
@@ -39,9 +40,11 @@ def decToBinStr(num):
         binary += str(tempQuotient % 2)
         tempQuotient = tempQuotient // 2
 
-    return binary[::-1] # retourne le resultat inversé 
+    binary = list(binary)
+    binary.reverse()
+    return ''.join(binary) 
 
-#print(decToBinStr(420)) # -> 110100100
+# print(decToBinStr(420)) # -> 110100100
 
 
 # exercice 9
@@ -70,9 +73,12 @@ def octToBin(octNum):
         base8Binary += str(tempQuotient % 2)
         tempQuotient = tempQuotient // 2
 
-    return base8Binary[::-1]
+    base8Binary = list(base8Binary)
+    base8Binary.reverse()
+    return ''.join(base8Binary)
+    
 
-#print(octToBin(32)) # -> 11010
+# print(octToBin(32)) # -> 11010
 
 
 # exercice 10
@@ -106,8 +112,10 @@ def hexToBin(hexVal): # suposent que la valeur est un string
         base16Binary += str(tempQuotient % 2)
         tempQuotient = tempQuotient // 2
 
-    return base16Binary[::-1]
+    base16Binary = list(base16Binary)
+    base16Binary.reverse()
+    return ''.join(base16Binary)
 
 
-#print(hexToBin('8f')) # -> 10001111
+# print(hexToBin('8f')) # -> 10001111
 
